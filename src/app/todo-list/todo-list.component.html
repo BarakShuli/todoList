@@ -1,9 +1,9 @@
 <div id="todoListContainer">
   <div class="row">
     <div class="col-md-7">
-        <h1 class="bd-title">My Todo List</h1>  
+        <h1 id="todoListTitle" class="bd-title">My Todo List</h1>  
     </div>  
-    <div class="col-md-5">
+    <div id="colTotalTasksCounterContainer" class="col-md-5">
       <div id="totalTasksCounter" class="alert alert-info">
           <strong>Total Tasks:</strong> {{(todoList | async).length}}
       </div>
@@ -18,8 +18,11 @@
       </li>
     </ul>
     </div>
-    <div class="col-md-3">
-      <button id="btnDeleteAllTasks" type="button" class="btn btn-outline-danger" (click)="clearStore()">Delete All Tasks</button>
-    </div>
+    
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+        <button id="btnDeleteAllTasks" type="button" class="btn btn-outline-danger" (click)="clearStore()">Delete All Tasks</button>
+      </div>
   </div>
 </div>
