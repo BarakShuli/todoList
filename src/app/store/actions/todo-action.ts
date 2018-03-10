@@ -18,4 +18,11 @@ export class ResetTodoList {
     }
 }
 
-export type All = AddNewTodoItem | ResetTodoList; 
+export class SetExtraTaskText {
+    readonly type = Config.SET_EXTRA_TEXT;
+    setExtraTask(text) {  
+        return { type: this.type, text};
+    }
+}
+
+export type All = AddNewTodoItem | ResetTodoList | SetExtraTaskText; 

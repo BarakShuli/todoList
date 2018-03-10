@@ -3,6 +3,7 @@ import {TodoItem} from "../models/todo";
 import { NgRedux, select, select$ } from '@angular-redux/store';
 import { IAppState } from '../store/reducers/todo-store';
 import { AddNewTodoItem, ResetTodoList } from '../store/actions/todo-action';
+import { Config } from '../shared/config';
 
 @Component({
   selector: 'todo-list',
@@ -11,10 +12,13 @@ import { AddNewTodoItem, ResetTodoList } from '../store/actions/todo-action';
 })
 export class TodoListComponent implements OnInit {
   @select() todoList;
-  
+  @select(['extraTaskText']) extraTaskText;
+  private maxTasksLength:number = Config.maxNumberOfTasks;
+
   constructor(private store: NgRedux<IAppState>) { }
 
   ngOnInit() {
+    
   }
 
   clearStore(){

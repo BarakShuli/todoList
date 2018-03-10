@@ -1,24 +1,23 @@
 <div id="todoFormContainer">
   <div class="row">
-    <div class="col">
+    <div class="col-md-12">
       <form (ngSubmit)="addNewItem()">
         <div class="row">
-          <div id="colTextBox" class="col-md-8">
+          <div id="colTextBox" class="col-md-5">
             <input #todoTxt id="txtTodo" name="todoTxt" type="text" class="form-control" placeholder="Add Todo..."  autocomplete="off"/>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <input id="btnSubmitNewTask" type="submit" class="btn btn-default" value="Save"/>
+          </div>
+          <div class="col-md-5">
+              <div id="totalTasksCounter" class="alert alert-info">
+                  <strong>Total Tasks:</strong> {{(todoList | async).length}}
+              </div>
           </div>
         </div>
       </form>
     </div>
   </div>
  
-  <div *ngIf="todoListLength == maxTasksLength && (todoList | async)?.length == 5" class="row errorMsgRow">
-    <div class="col-md-9">
-      <div class="alert alert-danger" role="alert">
-        The item {{elementText}} couldn’t be inserted. <br />
-      </div>
-    </div>
-  </div>
+  
 </div>

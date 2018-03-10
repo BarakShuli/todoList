@@ -1,39 +1,13 @@
 @import url("../../variables.less");
 #todoFormContainer{
     position:relative;top:2vh;
-    
-    .errorMsgRow{margin-top:10rem!important;}
-    
-    #txtTodo{width:29vw;}
 
-    #btnSubmitNewTask{}
+    .col-md-5{width:26vw}
 
-
-    @media (max-width: 576px){ 
-        #txtTodo{width:20vw;}
-        #btnSubmitNewTask{position: absolute;bottom: 1px;right: 11vw;}
-    }
-
-    @media (min-width: 576px)  and (max-width: 767px){ 
-        #txtTodo{width:19vw;}
-        #btnSubmitNewTask{position: absolute;bottom: 1px;right: 11vw;}
-    }
+    .col-md-2{width:14vw}
     
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) and (max-width: 991px) { 
-        #txtTodo{width:21vw;}
-        #colTextBox{max-width: 22vw;}
-    }
+    .alert{padding: 0.35rem 1.23rem!important;}
     
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 991px) and (max-width: 1199px){ 
-        #txtTodo{width:21vw;}
-        #colTextBox{max-width: 22vw;}
-    }
+    .alert-info{width:26vw;position:relative;background-color: #C1C1C1!important;color:#fff!important;font-size:@btnFontSize;}
     
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) { 
-        #txtTodo{width:28vw;}
-        #colTextBox{max-width: 29vw;}
-    }
 }

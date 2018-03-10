@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { TodoItem } from '../models/todo';
-import { AddNewTodoItem } from '../store/actions/todo-action';
+import { AddNewTodoItem, SetExtraTaskText } from '../store/actions/todo-action';
 import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from '../store/reducers/todo-store';
 import { Config } from '../shared/config';
@@ -14,7 +14,7 @@ import * as _ from "lodash";
 export class TodoFormComponent implements OnInit {
 
   private todoListLength: number = 0;
-  private maxTasksLength:number = Config.maxNumberOfTasks;
+  
   private elementText:string;
   
   @ViewChild('todoTxt') todoTxtEl:ElementRef;
@@ -28,12 +28,13 @@ export class TodoFormComponent implements OnInit {
 
   addNewItem(element: string) {
     this.todoListLength = this.store.getState().todoList.length;
-    console.log("this.store.getState().todoList-> ", this.store.getState().todoList);
     this.elementText = this.todoTxtEl.nativeElement.value;
     if(this.todoListLength <= (Config.maxNumberOfTasks-1)){
       let todo:TodoItem = {id: this.todoListLength + 1, text: `desc-${this.elementText}`, isDone: false};
       this.store.dispatch(new AddNewTodoItem().addTodo(todo));
       this.resetTextBox(this.todoTxtEl);
+    }else{
+      this.store.dispatch(new SetExtraTaskText().setExtraTask(this.elementText));
     }
   }
 

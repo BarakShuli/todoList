@@ -2,8 +2,8 @@
 
 #todoListContainer{
     
-    .list-group{width:26vw;}
-    
+    .list-group{border:solid 1px gray;height: 362px;width:25.5vw}
+
     .list-group li p{    
         width: 16vw;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display:inline-block;padding:0px;margin:0px;}
     
@@ -12,46 +12,20 @@
         position: relative;bottom:0px;right:5px;
     }
 
-    .alert-danger{font-size:@errorMsgFontSize}
+    .error-msg-row{width:21vw;margin-top:5px;}
 
-    .list-group-item{font-size: 2vw;width: 42vw;}
+    #col-list-group{width:45vw}
 
-    #todoListTitle{font-size:2.4vw;position: relative;}
-    
-    #totalTasksCounter{padding: 0.35rem 1.23rem!important;position:relative;top:10px;}
+    #row-list{margin-top:20px;}
 
-    #totalTasksCounter.alert-info{width:16vw;position:relative;background-color: #C1C1C1!important;color:#fff!important;font-size:@btnFontSize;}
-    
-    #btnDeleteAllTasks{position:relative;top:5px;font-size:@btnFontSize}  
-    
+    .list-group-item{font-size: 2vw;}
 
-    @media (max-width: 576px){ 
-        #colTotalTasksCounterContainer{width:25vw; position: absolute;top: 5px;right: 5px;}
-        #todoListTitle{top:3vh;width:21vw}
-        #totalTasksCounter.alert-info{width:19vw;top:1.3vh;}
-    }
+    .list-group-item:last-child{.reset-border-radius}
 
-    @media (min-width: 576px)  and (max-width: 767px){ 
-        #colTotalTasksCounterContainer{width:20vw; position: absolute;top: 3px;right: 8px;}
-        #todoListTitle{top:3vh;width: 28vw;}
-    }
-    
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) and (max-width: 991px) { 
-        #todoListTitle{top:5vh;}
-        #totalTasksCounter.alert-info{width:19vw;top:5vh;}
-    }
-    
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 991px) and (max-width: 1199px){ 
-        #todoListTitle{top:4vh;}
-        #totalTasksCounter.alert-info{top:4vh;}
-    }
-    
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) { 
-        #todoListTitle{top:4vh;}
-        #totalTasksCounter.alert-info{top:4vh;}
-    }
+    .list-group-item:first-child{.reset-border-radius}
+
+    #todo-list-title{top:4vh;font-size:2.4vw;position: relative;}
+        
+    #btn-delete-all-tasks{font-size:@btnFontSize}  
 }
 
